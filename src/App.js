@@ -5,11 +5,13 @@ import { Card, Navbar, Header } from "./component";
 
 function App() {
   return (
-    <Fragment className="App">
+    <Fragment>
+      <div className="App">
       <div className={styles.container}>
         <Navbar />
         <Header />
         <Card />
+      </div>
       </div>
     </Fragment>
   );
