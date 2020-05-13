@@ -7,7 +7,7 @@ function App() {
   return (
     <Fragment>
       <div className="App">
-      <div className={styles.container}>
+      <div>
         <Navbar />
         <Header />
         <Card />
