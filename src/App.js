@@ -1,6 +1,6 @@
 import React from "react";
 import "./tailwind.generated.css";
-import "./app.module.css";
+import styles from "./App.module.css";
 
 
 function App() {

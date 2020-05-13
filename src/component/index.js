@@ -1,11 +1,3 @@
-import React from 'react'
-import 
-const index = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
-
-export default index
+export {default as Card} from "./Card/Card"
+export {default as Header} from "./Header/Header"
+export {default as Navbar} from "./Navbar/Navbar"
