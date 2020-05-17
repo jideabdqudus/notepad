@@ -9,14 +9,18 @@ const Card = () => {
 }
 
  const formSubmitted=(e)=>{
-   e.preventDefault();
+  e.preventDefault();
+  const form = e.target.elements.item.value
+  if(form){
+    setItem(form)
+    e.target.elements.item.value = ""
+  }
 
  }
   return (
     <div>
-    <div>{item}</div>
       <form onSubmit={formSubmitted}>
-        <input type="name" onChange={formChanged} placeholder="Your Item"/>
+        <input type="text" name="item"  placeholder="Your Item"/>
         <button type="submit" value="Submit">Submit</button>
       </form>
     </div>
