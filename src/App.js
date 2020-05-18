@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import "./tailwind.generated.css";
-import style from "./App.module.css";
 import { Card, Navbar, Header } from "./component";
 
 
