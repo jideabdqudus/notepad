@@ -8,7 +8,7 @@ function App() {
   return (
     <Fragment>
       <div className="App">
-      <div className={style.body}>
+      <div>
         <Navbar />
         <Header />
         <Card />
