@@ -12,33 +12,28 @@ import {
 const Card = () => {
   return (
     <div>
-    
       <Col sm="12" md={{ size: 4, offset: 4 }}>
-      <Jumbotron>
-        <div>
+        <Jumbotron>
           <div>
-            <h1 className="display-3">Schedule</h1>
-            <Toast>
-              <ToastHeader icon="primary">Reactstrap</ToastHeader>
-              <ToastBody>
-                This is a toast with a primary icon — check it out!
-              </ToastBody>
-            </Toast>
-            <Toast>
-              <ToastHeader icon="secondary">Reactstrap</ToastHeader>
-              <ToastBody>
-                This is a toast with a secondary icon — check it out!
-              </ToastBody>
-            </Toast>
-            <Toast>
-              <ToastHeader icon="success">Reactstrap</ToastHeader>
-              <ToastBody>
-                This is a toast with a success icon — check it out!
-              </ToastBody>
-            </Toast>
+            <div>
+              <h1 className="display-3">Schedule</h1>
+              <br />
+              <Row>
+                <Col sm={10}>
+                  <Toast>
+                    <ToastHeader icon="primary">Reactstrap</ToastHeader>
+                    <ToastBody>
+                      This is a toast with a primary icon — check it out!
+                    </ToastBody>
+                  </Toast>
+                </Col>
+                <Col sm={2}>
+                  <h4>Delete</h4>
+                </Col>
+              </Row>
+            </div>
           </div>
-        </div>
-      </Jumbotron>
+        </Jumbotron>
       </Col>
     </div>
   );
