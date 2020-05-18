@@ -4,9 +4,14 @@ import {
   Container,
   Toast,
   ToastBody,
+  Form,
+  FormGroup,
+  Label,
+  Input,
   Row,
   Col,
   ToastHeader,
+  Button,
 } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -49,6 +54,24 @@ const Card = () => {
                   </Col>
                 </Row>
               </div>
+              <br />
+              <Form>
+              <Row form>
+              <Col sm={10}>
+                <FormGroup>
+                  <Input
+                    type="text"
+                    name="item"
+                    id="todoItem"
+                    placeholder="Add an Option here"
+                  />
+                </FormGroup>
+                </Col>
+                <Col sm={2}>
+                <Button>Submit</Button>
+                </Col>
+                </Row>
+              </Form>
             </div>
           </Container>
         </Jumbotron>

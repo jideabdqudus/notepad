@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import "./tailwind.generated.css";
 import { Card, Navbar, Header } from "./component";
 
-
 function App() {
   return (
     <Fragment>
