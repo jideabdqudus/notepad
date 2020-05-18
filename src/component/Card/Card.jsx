@@ -1,49 +1,47 @@
 import React from "react";
+import {
+  Jumbotron,
+  Container,
+  Toast,
+  ToastBody,
+  Row,
+  Col,
+  ToastHeader,
+} from "reactstrap";
 
 const Card = () => {
   return (
     <div>
-        <ul>
-          <li>Dish washing</li>
-          <li>Edit CV</li>
-          <li>Football</li>
-          <li>Paysmosmo</li>
-          <li>New Laptop</li>
-        </ul>
+    
+      <Col sm="12" md={{ size: 4, offset: 4 }}>
+      <Jumbotron>
+        <div>
+          <div>
+            <h1 className="display-3">Schedule</h1>
+            <Toast>
+              <ToastHeader icon="primary">Reactstrap</ToastHeader>
+              <ToastBody>
+                This is a toast with a primary icon — check it out!
+              </ToastBody>
+            </Toast>
+            <Toast>
+              <ToastHeader icon="secondary">Reactstrap</ToastHeader>
+              <ToastBody>
+                This is a toast with a secondary icon — check it out!
+              </ToastBody>
+            </Toast>
+            <Toast>
+              <ToastHeader icon="success">Reactstrap</ToastHeader>
+              <ToastBody>
+                This is a toast with a success icon — check it out!
+              </ToastBody>
+            </Toast>
+          </div>
+        </div>
+      </Jumbotron>
+      </Col>
     </div>
   );
 };
 
 export default Card;
-
-
-
-
-
-// const Card = () => {
-//   const [item, setItem] = useState([]);
- 
-//   const formChanged=(e)=>{
-//    e.preventDefault();
-//    setItem(e.target.value)
-//  }
- 
-//   const formSubmitted=(e)=>{
-//    e.preventDefault();
-//    const form = e.target.elements.item.value
-//    if(form){
-//      setItem(form)
-//      e.target.elements.item.value = ""
-//    }
- 
-//   }
-//    return (
-//      <div>
-//        <form onSubmit={formSubmitted}>
-//          <input type="text" name="item"  placeholder="Your Item"/>
-//          <button type="submit" value="Submit">Submit</button>
-//        </form>
-//      </div>
-//    );
-//  };
- 
