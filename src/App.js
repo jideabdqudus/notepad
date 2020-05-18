@@ -6,11 +6,11 @@ function App() {
   return (
     <Fragment>
       <div className="App">
-      <div>
-        <Navbar />
-        <Header />
-        <Card />
-      </div>
+        <div>
+          <Navbar />
+          <Header />
+          <Card />
+        </div>
       </div>
     </Fragment>
   );

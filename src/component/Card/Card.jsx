@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   Jumbotron,
   Container,
@@ -6,7 +6,6 @@ import {
   ToastBody,
   Form,
   FormGroup,
-  Label,
   Input,
   Row,
   Col,
@@ -14,9 +13,19 @@ import {
   Button,
 } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faPlus } from "@fortawesome/free-solid-svg-icons";
+
+
 
 const Card = () => {
+
+  const [item, setItem] = useState([])
+
+  const formSubmitted =(e)=>{
+    e.preventDefault()
+
+  }
+
   return (
     <div>
       <Col sm="12" md={{ size: 4, offset: 4 }}>
@@ -55,21 +64,24 @@ const Card = () => {
                 </Row>
               </div>
               <br />
-              <Form>
-              <Row form>
-              <Col sm={10}>
-                <FormGroup>
-                  <Input
-                    type="text"
-                    name="item"
-                    id="todoItem"
-                    placeholder="Add an Option here"
-                  />
-                </FormGroup>
-                </Col>
-                <Col sm={2}>
-                <Button>Submit</Button>
-                </Col>
+              <Form onSubmit={formSubmitted}>
+                <Row form>
+                  <Col sm={10}>
+                    <FormGroup>
+                      <Input
+                        type="text"
+                        name="item"
+                        id="todoItem"
+                        placeholder="Add an Option here"
+                        value={item}
+                        />
+                    </FormGroup>
+                  </Col>
+                  <Col sm={2}>
+                    <Button outline color="success">
+                      <FontAwesomeIcon icon={faPlus} />
+                    </Button>
+                  </Col>
                 </Row>
               </Form>
             </div>
