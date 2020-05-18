@@ -5,18 +5,14 @@ import { Container, Row, Col, Button } from "reactstrap";
 
 const Header = () => {
   return (
-    <Container className="themed-container" fluid="md">
-    <Row xs="2">
-    <Col></Col>
-    <Col></Col>
-    <Col></Col>
-    <Col>Column</Col>
-  </Row>  
+    <Container className="themed-container" fluid="md">  
+    <div className={style.container}>
     <Row>
-        <Col sm="12" md={{ size: 6, offset: 3 }}>
+        <Col sm="12" md={{ size: 6, offset: 5 }}>
         <Button color="primary" size="lg">Large Button</Button>
         </Col>
     </Row>
+    </div>
     </Container>
   );
 };
