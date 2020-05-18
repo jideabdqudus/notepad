@@ -3,7 +3,13 @@ import React from "react";
 const Card = () => {
   return (
     <div>
-
+        <ul>
+          <li>Dish washing</li>
+          <li>Edit CV</li>
+          <li>Football</li>
+          <li>Paysmosmo</li>
+          <li>New Laptop</li>
+        </ul>
     </div>
   );
 };
