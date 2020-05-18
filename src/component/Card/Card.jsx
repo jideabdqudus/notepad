@@ -19,11 +19,17 @@ import { faTrash, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const Card = () => {
 
-  const [item, setItem] = useState([])
+  const [item, setItem] = useState([{text:"", key:""}])
 
   const formSubmitted =(e)=>{
     e.preventDefault()
+    console.log(item)
 
+  }
+
+  const formChange =(e)=>{
+    e.preventDefault();
+    setItem([{text:e.target.value, key:Date.now()}])
   }
 
   return (
@@ -73,12 +79,13 @@ const Card = () => {
                         name="item"
                         id="todoItem"
                         placeholder="Add an Option here"
-                        value={item}
+                        value={item.text}
+                        onChange={formChange}
                         />
                     </FormGroup>
                   </Col>
                   <Col sm={2}>
-                    <Button outline color="success">
+                    <Button type="submit" outline color="success">
                       <FontAwesomeIcon icon={faPlus} />
                     </Button>
                   </Col>
