@@ -6,7 +6,6 @@ import {
   ToastBody,
   Row,
   Col,
-  Button,
   ToastHeader,
 } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,8 +19,11 @@ const Card = () => {
           <Container>
             <div>
               <h3 className="display-4">What to do?</h3>
-              <a href="#!" className="lead" size="sm">Delete all Posts</a>
-              <br /><br/>
+              <a href="#!" className="lead" size="sm">
+                Delete all Posts
+              </a>
+              <br />
+              <br />
               <div>
                 <Row>
                   <Col sm={10}>
