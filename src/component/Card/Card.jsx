@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   Jumbotron,
   Container,
@@ -15,21 +15,20 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPlus } from "@fortawesome/free-solid-svg-icons";
 
-
-
 const Card = () => {
+  const [items, setItems] = useState({ text: "", key: "" });
 
-  const [items, setItems] = useState([{text:"", key:""}])
-
-  const formSubmitted =(e)=>{
-    e.preventDefault()
-    console.log(items)
-  }
-
-  const formChange =(e)=>{
+  const formSubmitted = (e) => {
     e.preventDefault();
-    setItems([{text:e.target.value, key:Date.now()}])
-  }
+    const newItem = items
+
+    console.log(newItem);
+  };
+
+  const formChange = (e) => {
+    e.preventDefault();
+    setItems([{ text: e.target.value, key: Date.now() }]);
+  };
 
   return (
     <div>
@@ -67,8 +66,8 @@ const Card = () => {
                     <FontAwesomeIcon icon={faTrash} size="lg" />
                   </Col>
                 </Row>
-                
               </div>
+
               <br />
               <Form onSubmit={formSubmitted}>
                 <Row form>
@@ -81,7 +80,7 @@ const Card = () => {
                         placeholder="Add an Option here"
                         value={items.text}
                         onChange={formChange}
-                        />
+                      />
                     </FormGroup>
                   </Col>
                   <Col sm={2}>
