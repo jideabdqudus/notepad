@@ -33,6 +33,7 @@ class App extends Component {
   }
 
   deleteItem =(id)=>{
+    this.setState({todos: [...this.state.todos.filter(todo=>todo.id !==id)]})
     console.log(id)
   }
 
