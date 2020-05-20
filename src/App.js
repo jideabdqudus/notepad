@@ -12,12 +12,12 @@ class App extends Component {
       },
       {
         id: 1,
-        message: "Wash the car",
+        message: "Clean the House",
         completed: false,
       },
       {
         id: 1,
-        message: "Wash the car",
+        message: "Feed the Hen",
         completed: false,
       },
     ],

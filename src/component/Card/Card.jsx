@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   Jumbotron,
   Container,
@@ -15,8 +15,11 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPlus } from "@fortawesome/free-solid-svg-icons";
 
-const Card = ({ addItem }) => {
 
+class Card extends Component  {
+
+
+  render(){
   return (
     <div>
       <Col sm="12" md={{ size: 4, offset: 4 }}>
@@ -54,7 +57,9 @@ const Card = ({ addItem }) => {
                   </Col>
                 </Row>
               </div>
-
+              <h1>{this.props.todos.map((todo)=>{
+                return <h1> {todo.message}</h1>
+              })}</h1>
               <br />
               <Form>
                 <Row form>
@@ -81,6 +86,7 @@ const Card = ({ addItem }) => {
       </Col>
     </div>
   );
+  }
 };
 
 export default Card;
