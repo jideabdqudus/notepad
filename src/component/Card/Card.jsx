@@ -15,19 +15,29 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPlus } from "@fortawesome/free-solid-svg-icons";
 
-const Card = () => {
-  const [items, setItems] = useState({ text: "", key: "" });
+const Card = ({addItem}) => {
+  const [items, setItems] = useState("");
 
   const formSubmitted = (e) => {
     e.preventDefault();
-    const newItem = items
+    if (items === ""){
+      return <p>Please enter a message</p>
+    }else{
+      const newItem = {
+        items,
+        key: new Date ()
+      }
 
-    console.log(newItem);
+      addItem (newItem);
+      setItems("")
+
+    }
   };
+  
 
   const formChange = (e) => {
     e.preventDefault();
-    setItems([{ text: e.target.value, key: Date.now() }]);
+    setItems(e.target.value);
   };
 
   return (
@@ -78,7 +88,7 @@ const Card = () => {
                         name="items"
                         id="todoItems"
                         placeholder="Add an Option here"
-                        value={items.text}
+                        value={items}
                         onChange={formChange}
                       />
                     </FormGroup>
