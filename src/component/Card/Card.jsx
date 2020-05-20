@@ -14,6 +14,7 @@ import {
 } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPlus } from "@fortawesome/free-solid-svg-icons";
+import CardItem from "./CardItem";
 
 
 class Card extends Component  {
@@ -32,33 +33,9 @@ class Card extends Component  {
               </a>
               <br />
               <br />
-              <div>
-                <Row>
-                  <Col sm={10}>
-                    <Toast>
-                      <ToastHeader icon="danger">Important</ToastHeader>
-                      <ToastBody>Scholarship Application!</ToastBody>
-                    </Toast>
-                  </Col>
-                  <Col sm={2}>
-                    <FontAwesomeIcon icon={faTrash} size="lg" />
-                  </Col>
-                </Row>
-                <br />
-                <Row>
-                  <Col sm={10}>
-                    <Toast>
-                      <ToastHeader icon="warning">Important</ToastHeader>
-                      <ToastBody>Submit Info</ToastBody>
-                    </Toast>
-                  </Col>
-                  <Col sm={2}>
-                    <FontAwesomeIcon icon={faTrash} size="lg" />
-                  </Col>
-                </Row>
-              </div>
+              
               <h1>{this.props.todos.map((todo)=>{
-                return <h1> {todo.message}</h1>
+                return  <CardItem todo={todo}/>
               })}</h1>
               <br />
               <Form>
