@@ -1,33 +1,21 @@
 import React, { Component } from "react";
-import {
-    Jumbotron,
-    Container,
-    Toast,
-    ToastBody,
-    Form,
-    FormGroup,
-    Input,
-    Row,
-    Col,
-    ToastHeader,
-    Button,
-  } from "reactstrap";
-  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-  import { faTrash, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { Toast, ToastBody, Row, Col, ToastHeader } from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export class CardItem extends Component {
-
   render() {
-
-    const danger = "danger"
-
     return (
       <div>
         <div>
           <Row>
             <Col sm={10}>
               <Toast>
-                <ToastHeader icon={danger}>Important</ToastHeader>
+                <ToastHeader
+                  icon={this.props.todo.completed ? "danger" : "success"}
+                >
+                  Important
+                </ToastHeader>
                 <ToastBody>{this.props.todo.message}</ToastBody>
               </Toast>
             </Col>

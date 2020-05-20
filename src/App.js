@@ -13,7 +13,7 @@ class App extends Component {
       {
         id: 1,
         message: "Clean the House",
-        completed: false,
+        completed: true,
       },
       {
         id: 1,
