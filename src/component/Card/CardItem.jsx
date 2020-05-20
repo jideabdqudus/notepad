@@ -16,14 +16,18 @@ import {
   import { faTrash, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 export class CardItem extends Component {
+
   render() {
+
+    const danger = "danger"
+
     return (
       <div>
         <div>
           <Row>
             <Col sm={10}>
               <Toast>
-                <ToastHeader icon="danger">Important</ToastHeader>
+                <ToastHeader icon={danger}>Important</ToastHeader>
                 <ToastBody>{this.props.todo.message}</ToastBody>
               </Toast>
             </Col>
