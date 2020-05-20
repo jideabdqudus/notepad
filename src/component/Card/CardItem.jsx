@@ -5,6 +5,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export class CardItem extends Component {
   render() {
+      const {message, completed, id} = this.props.todo
     return (
       <div>
         <div>
@@ -12,15 +13,15 @@ export class CardItem extends Component {
             <Col sm={10}>
               <Toast>
                 <ToastHeader
-                  icon={this.props.todo.completed ? "danger" : "success"}
+                  icon={completed ? "danger" : "success"}
                 >
-                  Important
+                  Status
                 </ToastHeader>
-                <ToastBody>{this.props.todo.message}</ToastBody>
+                <ToastBody>{message}</ToastBody>
               </Toast>
             </Col>
             <Col sm={2}>
-              <FontAwesomeIcon icon={faTrash} size="lg" />
+              <a><FontAwesomeIcon icon={faTrash} size="lg" onClick={this.props.deleteItem.bind(this, id)} /></a>
             </Col>
           </Row>
           <br />

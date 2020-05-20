@@ -11,19 +11,26 @@ class App extends Component {
         completed: false,
       },
       {
-        id: 1,
+        id: 2,
         message: "Clean the House",
         completed: true,
       },
       {
-        id: 1,
+        id: 3,
         message: "Feed the Hen",
         completed: false,
       },
     ],
   };
+
+  
+   deleteItem =(id)=>{
+    this.setState()
+  }
+
   render() {
     const { todos } = this.state;
+
 
     return (
       <Fragment>
@@ -31,7 +38,7 @@ class App extends Component {
           <div>
             <Navbar />
             <Header />
-            <Card todos={todos} />
+            <Card todos={todos} deleteItem={this.deleteItem}/>
           </div>
         </div>
       </Fragment>

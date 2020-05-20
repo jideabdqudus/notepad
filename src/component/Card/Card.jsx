@@ -35,7 +35,7 @@ class Card extends Component  {
               <br />
               
               {this.props.todos.map((todo)=>{
-                return  <CardItem key={todo.id} todo={todo}/>
+                return  <CardItem key={todo.id} todo={todo} deleteItem={this.props.deleteItem}/>
               })}
               <br />
               <Form>
