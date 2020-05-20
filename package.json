@@ -21,6 +21,8 @@
     "build:tailwind": "tailwindcss build src/tailwind.css -o src/tailwind.generated.css",
     "prestart": "npm run build:tailwind",
     "prebuild": "npm run build:tailwind",
+    "json-server": "json-server --watch db.json --port 6500",
+    "dev": "concurrently \"npm start\" \"npm run json-server\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -40,5 +42,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "json-server": "^0.16.1"
   }
 }
