@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Toast, ToastBody, Row, Col, ToastHeader } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 
 export class CardItem extends Component {
   render() {
@@ -21,7 +21,8 @@ export class CardItem extends Component {
               </Toast>
             </Col>
             <Col sm={2}>
-              <a><FontAwesomeIcon icon={faTrash} size="lg" onClick={this.props.deleteItem.bind(this, id)} /></a>
+              <a><FontAwesomeIcon icon={faThumbsUp} size="lg" onClick={this.props.completedItem.bind(this, id)} style={{marginBottom:"10px"}}/></a>
+              <a><FontAwesomeIcon icon={faTrash} size="lg" onClick={this.props.deleteItem.bind(this, id)} style={{marginTop:"10px"}} /></a>
             </Col>
           </Row>
           <br />

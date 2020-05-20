@@ -24,12 +24,21 @@ class App extends Component {
   };
 
   
-   deleteItem =(id)=>{
-    this.setState()
+   completedItem =(id)=>{
+    this.setState({todos: this.state.todos.map((todo)=>{
+      if (todo.id === id){
+          todo.completed = !todo.completed
+      }return todo
+    })})
+  }
+
+  deleteItem =(id)=>{
+    console.log(id)
   }
 
   render() {
     const { todos } = this.state;
+    const { id } = this.state;
 
 
     return (
@@ -38,7 +47,7 @@ class App extends Component {
           <div>
             <Navbar />
             <Header />
-            <Card todos={todos} deleteItem={this.deleteItem}/>
+            <Card todos={todos} id={id} deleteItem={this.deleteItem} completedItem={this.completedItem}/>
           </div>
         </div>
       </Fragment>
