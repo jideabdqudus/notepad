@@ -23,24 +23,31 @@ class App extends Component {
     ],
   };
 
-  
-   completedItem =(id)=>{
-    this.setState({todos: this.state.todos.map((todo)=>{
-      if (todo.id === id){
-          todo.completed = !todo.completed
-      }return todo
-    })})
-  }
+  completedItem = (id) => {
+    this.setState({
+      todos: this.state.todos.map((todo) => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      }),
+    });
+  };
 
-  deleteItem =(id)=>{
-    this.setState({todos: [...this.state.todos.filter(todo=>todo.id !==id)]})
-    console.log(id)
-  }
+  deleteItem = (id) => {
+    this.setState({
+      todos: [...this.state.todos.filter((todo) => todo.id !== id)],
+    });
+    console.log(id);
+  };
+
+  deleteAllItem = () => {
+    this.setState({ todos: [] });
+  };
 
   render() {
     const { todos } = this.state;
     const { id } = this.state;
-
 
     return (
       <Fragment>
@@ -48,7 +55,13 @@ class App extends Component {
           <div>
             <Navbar />
             <Header />
-            <Card todos={todos} id={id} deleteItem={this.deleteItem} completedItem={this.completedItem}/>
+            <Card
+              todos={todos}
+              id={id}
+              deleteItem={this.deleteItem}
+              completedItem={this.completedItem}
+              deleteAllItem={this.deleteAllItem}
+            />
           </div>
         </div>
       </Fragment>
