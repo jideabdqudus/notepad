@@ -15,30 +15,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPlus } from "@fortawesome/free-solid-svg-icons";
 
-const Card = ({addItem}) => {
-  const [items, setItems] = useState("");
-
-  const formSubmitted = (e) => {
-    e.preventDefault();
-    if (items === ""){
-      return <p>Please enter a message</p>
-    }else{
-      const newItem = {
-        items,
-        key: new Date ()
-      }
-
-      addItem (newItem);
-      setItems("")
-
-    }
-  };
-  
-
-  const formChange = (e) => {
-    e.preventDefault();
-    setItems(e.target.value);
-  };
+const Card = ({ addItem }) => {
 
   return (
     <div>
@@ -79,7 +56,7 @@ const Card = ({addItem}) => {
               </div>
 
               <br />
-              <Form onSubmit={formSubmitted}>
+              <Form>
                 <Row form>
                   <Col sm={10}>
                     <FormGroup>
@@ -88,8 +65,6 @@ const Card = ({addItem}) => {
                         name="items"
                         id="todoItems"
                         placeholder="Add an Option here"
-                        value={items}
-                        onChange={formChange}
                       />
                     </FormGroup>
                   </Col>
@@ -109,3 +84,21 @@ const Card = ({addItem}) => {
 };
 
 export default Card;
+
+// const [items, setItems] = useState("");
+
+//   const formSubmitted = (e) => {
+//     e.preventDefault();
+//     if (items === ""){
+//       return <p>Please enter a message</p>
+//     }else{
+//       const newItem = {
+//         items,
+//         key: new Date ()
+//       }
+
+//       addItem (newItem);
+//       setItems("")
+
+//     }
+//   };
