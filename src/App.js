@@ -45,6 +45,15 @@ class App extends Component {
     this.setState({ todos: [] });
   };
 
+  formSubmit =(message) =>{
+    const newTodo = {
+      id:4,
+      message: message,
+      completed: false
+    }
+    this.setState({todos:{...this.state.todos, newTodo}})
+  }
+
   render() {
     const { todos } = this.state;
     const { id } = this.state;
@@ -61,6 +70,7 @@ class App extends Component {
               deleteItem={this.deleteItem}
               completedItem={this.completedItem}
               deleteAllItem={this.deleteAllItem}
+              formSubmit = {this.formSubmit}
             />
           </div>
         </div>

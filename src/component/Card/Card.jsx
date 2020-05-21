@@ -2,21 +2,33 @@ import React, { Component } from "react";
 import {
   Jumbotron,
   Container,
-  Toast,
-  ToastBody,
   Form,
   FormGroup,
   Input,
   Row,
   Col,
-  ToastHeader,
   Button,
 } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import CardItem from "./CardItem";
 
 class Card extends Component {
+  
+  state={
+    message: ""
+  }
+
+  onSubmit=(e)=>{
+    e.preventDefault()
+    this.props.formSubmit(this.state.message)
+    this.setState({message:""})
+  }
+
+  onChange = (e) =>{
+    this.setState({message: e.target.value})
+  }
+  
   render() {
     return (
       <div>
@@ -33,9 +45,6 @@ class Card extends Component {
                 >
                   Delete all Posts
                 </a>
-                <br />
-                <br />
-
                 {this.props.todos.map((todo) => {
                   return (
                     <CardItem
@@ -47,15 +56,17 @@ class Card extends Component {
                   );
                 })}
                 <br />
-                <Form>
+                <Form onSubmit={this.onSubmit}>
                   <Row form>
                     <Col sm={10}>
                       <FormGroup>
                         <Input
                           type="text"
-                          name="items"
+                          name="message"
                           id="todoItems"
                           placeholder="Add an Option here"
+                          value={this.state.message}
+                          onChange={this.onChange}
                         />
                       </FormGroup>
                     </Col>
@@ -77,20 +88,3 @@ class Card extends Component {
 
 export default Card;
 
-// const [items, setItems] = useState("");
-
-//   const formSubmitted = (e) => {
-//     e.preventDefault();
-//     if (items === ""){
-//       return <p>Please enter a message</p>
-//     }else{
-//       const newItem = {
-//         items,
-//         key: new Date ()
-//       }
-
-//       addItem (newItem);
-//       setItems("")
-
-//     }
-//   };
