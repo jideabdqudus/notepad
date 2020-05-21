@@ -1,23 +1,23 @@
 import React, { Fragment, Component } from "react";
 import "./tailwind.generated.css";
-import uuid from "uuid";
+import { v4 as uuidv4 } from 'uuid'
 import { Card, Navbar, Header } from "./component";
 
 class App extends Component {
   state = {
     todos: [
       {
-        id: uuid.v4(),
+        id: uuidv4,
         message: "Wash the car",
         completed: false,
       },
       {
-        id: uuid.v4(),
+        id: uuidv4,
         message: "Clean the House",
         completed: true,
       },
       {
-        id: uuid.v4(),
+        id: uuidv4,
         message: "Feed the Hen",
         completed: false,
       },
@@ -48,7 +48,7 @@ class App extends Component {
 
   formSubmit = (message) => {
     const newTodo = {
-      id: uuid.v4(),
+      id: uuidv4,
       message,
       completed: false,
     };
