@@ -44,15 +44,15 @@ class Card extends Component {
                 >
                   Delete all Posts
                 </a>
-                {this.props.todos.map((todo) => {
-                  return (
-                    <CardItem
-                      key={todo.id}
-                      todo={todo}
-                      deleteItem={this.props.deleteItem}
-                      completedItem={this.props.completedItem}
-                    />
-                  );
+                
+                {this.props.todos.map((todo)=>{
+                return(  <CardItem 
+                  key={todo.id}
+                  todo={todo}
+                  deleteItem={this.props.deleteItem}
+                  completedItem={this.props.completedItem}
+                  />
+                )
                 })}
                 <br />
                 <Form onSubmit={this.onSubmit}>

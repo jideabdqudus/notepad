@@ -48,7 +48,7 @@ class App extends Component {
   formSubmit =(message) =>{
     const newTodo = {
       id:4,
-      message: message,
+      message,
       completed: false
     }
     this.setState({todos:{...this.state.todos, newTodo}})
