@@ -14,21 +14,20 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import CardItem from "./CardItem";
 
 class Card extends Component {
-  
-  state={
-    message: ""
-  }
+  state = {
+    message: "",
+  };
 
-  onSubmit=(e)=>{
-    e.preventDefault()
-    this.props.formSubmit(this.state.message)
-    this.setState({message:""})
-  }
+  onSubmit = (e) => {
+    e.preventDefault();
+    this.props.formSubmit(this.state.message);
+    this.setState({ message: "" });
+  };
 
-  onChange = (e) =>{
-    this.setState({message: e.target.value})
-  }
-  
+  onChange = (e) => {
+    this.setState({ message: e.target.value });
+  };
+
   render() {
     return (
       <div>
@@ -87,4 +86,3 @@ class Card extends Component {
 }
 
 export default Card;
-
