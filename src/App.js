@@ -1,23 +1,22 @@
 import React, { Fragment, Component } from "react";
 import "./tailwind.generated.css";
-import { v4 as uuidv4 } from 'uuid'
 import { Card, Navbar, Header } from "./component";
 
 class App extends Component {
   state = {
     todos: [
       {
-        id: uuidv4,
+        id: 1,
         message: "Wash the car",
         completed: false,
       },
       {
-        id: uuidv4,
+        id: 2,
         message: "Clean the House",
         completed: true,
       },
       {
-        id: uuidv4,
+        id: 3,
         message: "Feed the Hen",
         completed: false,
       },
@@ -39,7 +38,6 @@ class App extends Component {
     this.setState({
       todos: [...this.state.todos.filter((todo) => todo.id !== id)],
     });
-    console.log(id);
   };
 
   deleteAllItem = () => {
@@ -48,7 +46,7 @@ class App extends Component {
 
   formSubmit = (message) => {
     const newTodo = {
-      id: uuidv4,
+      id: Date.now(),
       message,
       completed: false,
     };
@@ -56,8 +54,7 @@ class App extends Component {
   };
 
   render() {
-    const { todos } = this.state;
-    const { id } = this.state;
+    const { todos,id } = this.state;
 
     return (
       <Fragment>
